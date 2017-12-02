@@ -1,0 +1,134 @@
+/* ===== GENERAL ===== */
+body, figure, ol {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #fff;
+  color: #000;
+  font: 1.4em/1.4 serif;
+  margin: 3em 0;
+  padding: 0;
+}
+
+
+/* ===== LAYOUT ===== */
+.grid {
+  display: grid;
+  grid-template: repeat(12, [row] 1fr) / repeat(12, [col] 1fr);
+  width: 100%;
+  height: 100vh;
+}
+
+.title,
+.intro,
+.about,
+.interwebs,
+.name,
+.me {
+  grid-column: col 2 / span 10;
+}
+
+@media all and (min-width: 30em) {
+  .name {
+    grid-column: col 2 / span 6;
+  }
+  .me {
+    grid-column: col 8 / span 4;
+  }
+}
+
+@media all and (min-width: 60em) {
+  .title {
+    grid-column: col 2 / span 6;
+    grid-row: row 2;
+  }
+  .intro {
+    grid-column: col 3 / span 5;
+    grid-row: row 1;
+  }
+  .about {
+    grid-column: col 5 / span 4;
+    grid-row: row 2;
+  }
+  .interwebs {
+    grid-column: col 4 / span 4;
+    grid-row: row 3;
+  }
+  .name {
+    grid-column: col 10 / span 3;
+    grid-row: row 1 / span 6;
+  }
+  .me {
+    grid-column: col 7 / span 2;
+    grid-row: row 4;
+  }
+}
+
+/* ===== COMPONENTS ===== */
+
+/* Images */
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  z-index: -1;
+}
+figcaption {
+  font-size: 0.8em;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Text */
+.title {
+  font-size: 3em;
+  font-style: italic;
+  font-weight: normal;
+  letter-spacing: 0.6em;
+  margin: 0;
+}
+p {
+  margin: 0 0 1em;
+}
+.intro {
+  font-size: 1.2em;
+  font-style: italic;
+  line-height: 1.2em;
+}
+a {
+  border-bottom: 1px solid;
+  color: #e35939;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #9B2205;
+  border-width: 2px;
+}
+
+/* Definitions */
+.definition {
+  font-size: 0.8em;
+  margin: 1em;
+}
+.word, .kind, .pronunciation {
+  margin: 0;
+}
+.word {
+  font-size: 1.96em;
+  font-style: italic;
+  line-height: 1;
+}
+.kind, .pronunciation {
+  color: #777;
+}
+.kind::after {
+  content: '⋅';
+  display: inline-block;
+  margin: 0 10px;
+}
+.meanings {
+  margin: 0;
+  padding: 0 1em;
+}
